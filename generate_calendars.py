@@ -3,6 +3,13 @@ from bs4 import BeautifulSoup
 from ics import Calendar, Event
 from datetime import datetime, timedelta
 import json
+import os
+
+# ---------------------------------------------------------
+# Unterverzeichnis für ICS-Dateien sicherstellen
+# ---------------------------------------------------------
+OUTPUT_DIR = "calendars"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---------------------------------------------------------
 # SPIELORT EXTRAKTION
@@ -16,7 +23,7 @@ def fetch_venue(match_url):
         html = requests.get(match_url).text
         soup = BeautifulSoup(html, "html.parser")
 
-        # Hauptselektor – funktioniert bei allen aktuellen fussball.de-Spielseiten
+        # Hauptselektor – funktioniert bei aktuellen fussball.de-Spielseiten
         loc = soup.select_one("a.location")
         if loc:
             return loc.get_text(strip=True)
@@ -146,8 +153,7 @@ for team in teams:
 
     cal = build_calendar(matches)
 
-    filename = f"calendars/{team['name']}.ics"
-
+    filename = f"{OUTPUT_DIR}/{team['name']}.ics"
     with open(filename, "w", encoding="utf-8") as f:
         f.write(cal.serialize())
 
