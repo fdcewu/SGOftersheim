@@ -1,35 +1,66 @@
-name: Update All Team Calendars
+name: Update SG Oftersheim Kalender
 
 on:
   schedule:
-    - cron: "0 */6 * * *"
+    - cron: "0 6 * * *"   # jeden Tag um 06:00
   workflow_dispatch:
 
 jobs:
-  build:
+  update-calendar:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.11"
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
 
-    - name: Install dependencies
-      run: |
-        pip install requests beautifulsoup4 ics
+      - name: Install dependencies
+        run: |
+          pip install requests beautifulsoup4 ics
 
-    - name: Generate all ICS files
-      run: |
-        python generate_calendars.py
+      - name: Run calendar generator
+        id: runscript
+        run: |
+          python generate_calendars.py
 
-    - name: Commit and push ICS files
-      run: |
-        git config user.name "GitHub Actions"
-        git config user.email "actions@github.com"
-        git add *.ics
-        git commit -m "Update all team calendars" || echo "No changes to commit"
-        git push origin main
+      # -------------------------
+      # SUCCESS EMAIL
+      # -------------------------
+      - name: Send success email
+        if: success()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          subject: "success: ${{ github.run_started_at }}"
+          to: "it@sg-oftersheim.de"
+          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
+          body: |
+            Der Kalender-Workflow wurde erfolgreich ausgeführt.
+            Zeitpunkt: ${{ github.run_started_at }}
+
+      # -------------------------
+      # ERROR EMAIL
+      # -------------------------
+      - name: Send error email
+        if: failure()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 587
+          username: ${{ secrets.MAIL_USER }}
+          password: ${{ secrets.MAIL_PASS }}
+          subject: "error: ${{ github.run_started_at }}"
+          to: "it@sg-oftersheim.de"
+          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
+          body: |
+            Der Kalender-Workflow ist FEHLERHAFT beendet.
+            Zeitpunkt: ${{ github.run_started_at }}
+            Bitte Logs prüfen unter:
+            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
