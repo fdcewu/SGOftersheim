@@ -5,9 +5,6 @@ from datetime import datetime, timedelta
 import json
 
 def fetch_matches(team_url):
-    """Liest alle Spiele einer Mannschaft aus der fussball.de-Mannschaftsseite."""
-
-    # Hash-Fragment entfernen (#!/)
     if "#!" in team_url:
         team_url = team_url.split("#!")[0]
 
@@ -19,8 +16,6 @@ def fetch_matches(team_url):
     current_competition = None
 
     for row in soup.select("tr"):
-
-        # 1. row-headline → Datum + Uhrzeit + Wettbewerb
         if "row-headline" in row.get("class", []):
             headline = row.get_text(" ", strip=True)
             parts = headline.split("|")
@@ -30,11 +25,9 @@ def fetch_matches(team_url):
 
             raw = date_part.replace("Uhr", "").strip()
 
-            # Wochentag entfernen, falls vorhanden
             if "," in raw:
                 raw = raw.split(",", 1)[1].strip()
 
-            # Uhrzeit vorhanden?
             if "-" in raw:
                 dt = datetime.strptime(raw, "%d.%m.%Y - %H:%M")
             else:
@@ -44,7 +37,6 @@ def fetch_matches(team_url):
             current_competition = comp_part
             continue
 
-        # 2. echte Spielzeile → Teams
         if row.select_one(".column-club"):
             clubs = row.select(".column-club .club-name")
             if len(clubs) < 2:
@@ -64,24 +56,16 @@ def fetch_matches(team_url):
 
 
 def build_calendar(matches):
-    """Erzeugt einen ICS-Kalender aus den Matchdaten."""
     cal = Calendar()
     for m in matches:
         e = Event()
         e.name = m["title"]
         e.begin = m["start"]
         e.end = m["end"]
-
-        # Nur die Liga, kein Spielort
         e.description = m["league"]
-
         cal.events.add(e)
     return cal
 
-
-# ------------------------------
-# Hauptprogramm
-# ------------------------------
 
 with open("teams.json", "r") as f:
     teams = json.load(f)
@@ -92,7 +76,6 @@ for team in teams:
 
     filename = f"{team['name']}.ics"
     with open(filename, "w", encoding="utf-8") as f:
-        f.write(cal.serialize())   # WICHTIG: vollständiger ICS-Export
+        f.write(cal.serialize())
 
     print(f"Erzeugt: {filename} (Events: {len(matches)})")
-
