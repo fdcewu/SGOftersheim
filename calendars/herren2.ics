@@ -1,0 +1,153 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DESCRIPTION:Kreisfreundschaftsspiele
+DTEND:20260823T143000Z
+LOCATION:Rasenplatz\, FV Vikt. Ubstadt\, Kolpingstr. 26\, 76698 Ubstadt-Weiher
+DTSTART:20260823T130000Z
+SUMMARY:FV Ubstadt 2 - SG  Oftersheim 2
+UID:06a1d7a4-4a8a-477a-946b-54f1a58a4e19@06a1.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250907T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250907T000000Z
+SUMMARY:SG  Oftersheim 2 - Spvgg 06 Ketsch 3
+UID:240a27cc-b2c0-4ad9-8ce9-e22840f33b5d@240a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisfreundschaftsspiele
+DTEND:20260823T143000Z
+DTSTART:20260823T130000Z
+SUMMARY:FV Ubstadt - SG  Oftersheim 2
+UID:af9b685b-9174-41f8-a7af-627487a1bdc0@af9b.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260301T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260301T000000Z
+SUMMARY:SG  Oftersheim 2 - FV Ubstadt 2
+UID:8db3c789-a5a7-467c-8a13-0d7b0c626af6@8db3.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260830T163000Z
+LOCATION:Kunstrasenplatz\, TSG Rheinau\, Distelsand 11\, 68219 Mannheim
+DTSTART:20260830T150000Z
+SUMMARY:TSG Rheinau - SG  Oftersheim 2
+UID:93db884f-6612-4090-8ea9-6b482b040ac7@93db.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250504T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250504T000000Z
+SUMMARY:SG  Oftersheim 2 - VfL Kurpfalz Neckarau 2
+UID:81322fc5-17f9-431a-8ca3-a7a97eebc220@8132.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260913T140000Z
+LOCATION:Kunstrasenplatz\, SV Schwetzingen Kunstrasen\, Ketscher Landstr.\, 68723 Schwetzingen
+DTSTART:20260913T123000Z
+SUMMARY:SV 98 Schwetzingen 2 - SG  Oftersheim 2
+UID:6c7ea1e7-da70-4f6d-be9b-683003852196@6c7e.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260426T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260426T000000Z
+SUMMARY:SG  Oftersheim 2 - TSV Neckarau 2
+UID:e72440e0-1a8b-4352-8723-5397ec1eae17@e724.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250330T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250330T000000Z
+SUMMARY:SG  Oftersheim 2 - SV Rohrhof 2
+UID:4a695d19-12c9-4688-a308-e4b612053464@4a69.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260927T163000Z
+LOCATION:Rasenplatz\, SG Mannheim\, Im Pfeifferswörth\, 68167 Mannheim
+DTSTART:20260927T150000Z
+SUMMARY:SG Mannheim - SG  Oftersheim 2
+UID:f5c695bb-0d0e-4c43-ab35-f26dfc9cc03d@f5c6.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260906T140000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260906T123000Z
+SUMMARY:SG  Oftersheim 2 - Spvgg 06 Ketsch 2
+UID:9c55e122-dcc6-4f8a-9223-a08e0b6823d2@9c55.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20261004T140000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261004T123000Z
+SUMMARY:SG  Oftersheim 2 - Polizei SV Mannheim
+UID:96a755d0-3ebe-4c36-a189-ee74e473da8e@96a7.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250601T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250601T000000Z
+SUMMARY:SG  Oftersheim 2 - SC Pfingstberg-Hochstätt 2
+UID:82519463-1f1b-40fb-ac07-34228e32868d@8251.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260920T140000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260920T123000Z
+SUMMARY:SG  Oftersheim 2 - DJK Feudenheim
+UID:54bbb0b7-8381-4512-a5ed-59e20fec6768@54bb.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20261011T163000Z
+LOCATION:Rasenplatz\, TSG Eintracht Plankstadt NR\, Jahnstr. 2\, 68723 Plankstadt
+DTSTART:20261011T150000Z
+SUMMARY:TSG Eintracht Plankstadt - SG  Oftersheim 2
+UID:6ff29d8c-f0be-4437-a841-b82554ab874e@6ff2.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse A
+DTEND:20260910T210000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260910T193000Z
+SUMMARY:SG  Oftersheim 2 - SC 08 Reilingen
+UID:99738f89-ac54-49b6-ad3b-daadfbf18e65@9973.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260208T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260208T000000Z
+SUMMARY:SG  Oftersheim 2 - SSV Vogelstang 2
+UID:50ce695e-970f-4040-99d9-883b92d6432f@50ce.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260214T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260214T000000Z
+SUMMARY:SG  Oftersheim 2 - FG Rohrbach 2
+UID:a2a7297e-b217-47d9-862f-73fa455aacfb@a2a7.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250727T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250727T000000Z
+SUMMARY:SG  Oftersheim 2 - SG Hohensachsen
+UID:db8a73cb-ca35-4bf5-b83d-441cd1906bb6@db8a.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260322T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260322T000000Z
+SUMMARY:SG  Oftersheim 2 - VfL Kurpfalz Neckarau 2
+UID:095f81b3-c64a-49d5-912f-809a0cbe6148@095f.org
+END:VEVENT
+END:VCALENDAR
