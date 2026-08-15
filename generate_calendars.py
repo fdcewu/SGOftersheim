@@ -1,33 +1,38 @@
 import requests
 from bs4 import BeautifulSoup
 from ics import Calendar, Event
-from datetime import datetime
+from datetime import datetime, timedelta
 import json
+
+def fetch_venue(match_url):
+    """Extrahiert den Spielort von der Spielseite."""
+    try:
+        html = requests.get(match_url).text
+        soup = BeautifulSoup(html, "html.parser")
+        venue_el = soup.select_one(".venue-name")
+        if venue_el:
+            return venue_el.get_text(strip=True)
+    except:
+        pass
+    return "Unbekannt"
+
 
 def fetch_matches(team_url):
     html = requests.get(team_url).text
     soup = BeautifulSoup(html, "html.parser")
 
     matches = []
-
-    # Alle Spielzeilen (die Zeilen mit den Teams)
-    game_rows = soup.select("tr:not(.row-headline):not(.row-competition)")
-
     current_date = None
     current_competition = None
 
-    # Wir laufen durch alle Zeilen und merken uns Datum/Wettbewerb aus row-headline
     for row in soup.select("tr"):
         # 1. row-headline → Datum + Uhrzeit + Wettbewerb
         if "row-headline" in row.get("class", []):
             headline = row.get_text(" ", strip=True)
-            # Beispiel: "Mittwoch, 09.09.2026 - 19:30 Uhr | Landesfreundschaftsspiele"
             parts = headline.split("|")
             date_part = parts[0].strip()
             comp_part = parts[1].strip() if len(parts) > 1 else ""
 
-            # Datum extrahieren
-            # Format: "Mittwoch, 09.09.2026 - 19:30 Uhr"
             date_text = date_part.split(",")[1].strip()
             date_text = date_text.replace("Uhr", "").strip()
             dt = datetime.strptime(date_text, "%d.%m.%Y - %H:%M")
@@ -49,10 +54,14 @@ def fetch_matches(team_url):
             score_link = row.select_one(".column-score a")
             match_url = score_link["href"] if score_link else ""
 
+            # Spielort extrahieren
+            venue = fetch_venue(match_url)
+
             matches.append({
                 "title": f"{home} - {away}",
                 "start": current_date,
-                "location": "",
+                "end": current_date + timedelta(minutes=90),
+                "location": venue,
                 "league": current_competition,
                 "url": match_url
             })
@@ -66,6 +75,8 @@ def build_calendar(matches):
         e = Event()
         e.name = m["title"]
         e.begin = m["start"]
+        e.end = m["end"]
+        e.location = m["location"]
         e.description = f"{m['league']}\n{m['url']}"
         cal.events.add(e)
     return cal
