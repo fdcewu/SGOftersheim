@@ -41,6 +41,11 @@ def fetch_venue(match_url):
 
 
 def fetch_matches(team_url):
+    """Liest alle Spiele einer Mannschaft aus der fussball.de-Mannschaftsseite."""
+    # WICHTIG: Hash-Fragmente wie #!/ entfernen
+    if "#!" in team_url:
+        team_url = team_url.split("#!")[0]
+
     html = requests.get(team_url).text
     soup = BeautifulSoup(html, "html.parser")
 
@@ -93,6 +98,7 @@ def fetch_matches(team_url):
 
 
 def build_calendar(matches):
+    """Erzeugt einen ICS-Kalender aus den Matchdaten."""
     cal = Calendar()
     for m in matches:
         e = Event()
@@ -101,12 +107,16 @@ def build_calendar(matches):
         e.end = m["end"]
         e.location = m["location"]
 
-        # 👉 Nur die Liga, keine URL
+        # Nur die Liga, keine URL
         e.description = m["league"]
 
         cal.events.add(e)
     return cal
 
+
+# ------------------------------
+# Hauptprogramm
+# ------------------------------
 
 with open("teams.json", "r") as f:
     teams = json.load(f)
@@ -117,6 +127,6 @@ for team in teams:
 
     filename = f"{team['name']}.ics"
     with open(filename, "w", encoding="utf-8") as f:
-        f.writelines(cal)
+        f.write(str(cal))   # WICHTIG: erzeugt vollständige ICS-Datei
 
-    print(f"Erzeugt: {filename}")
+    print(f"Erzeugt: {filename} (Events: {len(matches)})")
