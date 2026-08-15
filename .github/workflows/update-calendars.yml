@@ -27,40 +27,4 @@ jobs:
         run: |
           python generate_calendars.py
 
-      # -------------------------
-      # SUCCESS EMAIL
-      # -------------------------
-      - name: Send success email
-        if: success()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASS }}
-          subject: "success: ${{ github.run_started_at }}"
-          to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow wurde erfolgreich ausgeführt.
-            Zeitpunkt: ${{ github.run_started_at }}
 
-      # -------------------------
-      # ERROR EMAIL
-      # -------------------------
-      - name: Send error email
-        if: failure()
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: smtp.gmail.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASS }}
-          subject: "error: ${{ github.run_started_at }}"
-          to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow ist FEHLERHAFT beendet.
-            Zeitpunkt: ${{ github.run_started_at }}
-            Bitte Logs prüfen unter:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
