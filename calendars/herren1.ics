@@ -1,1 +1,154 @@
-
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DTEND:20250202T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250202T000000Z
+SUMMARY:SG Oftersheim - FC Rot
+UID:5db2244f-c3c9-4a5f-acf9-a902860a65f9@5db2.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250220T013000Z
+LOCATION:Kunstrasenplatz\, TSV Wieblingen\, Ludwig-Guttmann-Str. 10\, 69123 Heidelberg
+DTSTART:20250220T000000Z
+SUMMARY:TSV 1887 Wieblingen - SG Oftersheim
+UID:bb12c85e-82d5-4f69-bfca-db608dd7b8ff@bb12.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260920T163000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260920T150000Z
+SUMMARY:SG Oftersheim - VfL Kurpfalz Neckarau
+UID:d432497f-2e6e-4656-812e-dc301755cd8a@d432.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250921T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250921T000000Z
+SUMMARY:SG Oftersheim - MFC 08 Lindenhof
+UID:409e5d5d-3764-4da9-b875-6e582c303636@409e.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260906T163000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260906T150000Z
+SUMMARY:SG Oftersheim - SKV Sandhofen
+UID:2080707f-a834-4dd9-a95e-bc6a3ef825a7@2080.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20261011T163000Z
+LOCATION:Kunstrasenplatz\, Ilvesheim KR\, Brückenstr.\, 68549 Ilvesheim
+DTSTART:20261011T150000Z
+SUMMARY:SpVgg 03 Ilvesheim - SG Oftersheim
+UID:3bee2517-1f52-41bd-8f3d-7634b93ff554@3bee.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20251005T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20251005T000000Z
+SUMMARY:SG Oftersheim - FV 03 Ladenburg
+UID:f5a145db-414f-4433-8e5c-9f83e46da5a4@f5a1.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20260809T013000Z
+LOCATION:Kunstrasenplatz\, SV Laudenbach\, Dr.-Werner-Freyberg-Str. 5\, 69514 Laudenbach
+DTSTART:20260809T000000Z
+SUMMARY:SV Laudenbach - SG Oftersheim
+UID:86f06d19-d6ab-4a05-8644-2869a41fc38a@86f0.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250907T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250907T000000Z
+SUMMARY:SG Oftersheim - TSG Rheinau
+UID:7d53ffe9-c88a-4eef-9065-174e6948c5fe@7d53.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260830T163000Z
+LOCATION:Rasenplatz\, SC Pfingstberg RP\, Mallaustr. 111\, 68219 Mannheim
+DTSTART:20260830T150000Z
+SUMMARY:SC Pfingstberg-Hochstätt - SG Oftersheim
+UID:faa2d89b-94b2-4e94-bf8b-5ed23c2f86c0@faa2.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260927T163000Z
+LOCATION:Kunstrasenplatz\, Städtischer Kunstrasenplatz\, Karl-Ladenburg-Str. / Ecke Hans-Reschke-Ufer\, 68165 Mannheim
+DTSTART:20260927T150000Z
+SUMMARY:SV Enosis Mannheim - SG Oftersheim
+UID:8bf2540a-ac40-4328-8f87-d0f3004c7d8e@8bf2.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250810T013000Z
+LOCATION:Kunstrasenplatz\, VfB Gartenstadt KR\, Anemonenweg 20-40\, 68305 Mannheim
+DTSTART:20250810T000000Z
+SUMMARY:VfB Gartenstadt 2 - SG Oftersheim
+UID:db0721fc-4b8c-4423-a8c8-ed415a2393d7@db07.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250323T013000Z
+LOCATION:Rasenplatz\, SG Oftersheim NR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250323T000000Z
+SUMMARY:SG Oftersheim - FV 1918 Brühl 2
+UID:7bf988e6-223d-4ad8-951a-92c73a49d39a@7bf9.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisfreundschaftsspiele
+DTEND:20260820T210000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260820T193000Z
+SUMMARY:SG Oftersheim - TB Rohrbach
+UID:f6762a12-1c9b-4958-bcd4-c9d7bc0ec51f@f676.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250223T013000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250223T000000Z
+SUMMARY:SG Oftersheim - TSV Rheinhausen
+UID:ef40d498-7506-4ade-a590-94e6b0d7d57a@ef40.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260909T210000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260909T193000Z
+SUMMARY:SG Oftersheim - FV Fortuna Heddesheim 2
+UID:9ebdeb4c-996a-4dc7-bbd1-919f947afbab@9ebd.org
+END:VEVENT
+BEGIN:VEVENT
+DTEND:20250817T013000Z
+LOCATION:Kunstrasenplatz\, TSG Rheinau\, Distelsand 11\, 68219 Mannheim
+DTSTART:20250817T000000Z
+SUMMARY:TSG Rheinau - SG Oftersheim
+UID:0b7e7e2d-e1b9-4e16-a5ac-27ade2456ae8@0b7e.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20260913T163000Z
+LOCATION:Rasenplatz\, SV Schwetzingen Trainingsrasen\, Ketscher Landstr.\, 68723 Schwetzingen
+DTSTART:20260913T150000Z
+SUMMARY:SV 98 Schwetzingen - SG Oftersheim
+UID:615ffbc0-c878-4cbd-8965-5bd97e413677@615f.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisliga
+DTEND:20261004T163000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261004T150000Z
+SUMMARY:SG Oftersheim - SV Rohrhof
+UID:563a7d80-9da7-4d89-8568-f7f0f788085f@563a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreispokal
+DTEND:20260816T183000Z
+LOCATION:Kunstrasenplatz\, TSG Rheinau\, Distelsand 11\, 68219 Mannheim
+DTSTART:20260816T170000Z
+SUMMARY:TSG Rheinau - SG Oftersheim
+UID:1001822c-ae5f-483b-87f8-05f292e79dc2@1001.org
+END:VEVENT
+END:VCALENDAR
