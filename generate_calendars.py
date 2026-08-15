@@ -75,4 +75,47 @@ def fetch_matches(team_url):
             away = clubs[1].get_text(strip=True)
 
             # Spiel-URL
-            score_link = row.select_one(".column
+            score_link = row.select_one(".column-score a")
+            match_url = score_link["href"] if score_link else ""
+
+            # Spielort extrahieren
+            venue = fetch_venue(match_url)
+
+            matches.append({
+                "title": f"{home} - {away}",
+                "start": current_date,
+                "end": current_date + timedelta(minutes=90),
+                "location": venue,
+                "league": current_competition,
+                "url": match_url
+            })
+
+    return matches
+
+
+def build_calendar(matches):
+    cal = Calendar()
+    for m in matches:
+        e = Event()
+        e.name = m["title"]
+        e.begin = m["start"]
+        e.end = m["end"]
+        e.location = m["location"]
+        e.description = f"{m['league']}\n{m['url']}"
+        cal.events.add(e)
+    return cal
+
+
+with open("teams.json", "r") as f:
+    teams = json.load(f)
+
+for team in teams:
+    matches = fetch_matches(team["url"])
+    cal = build_calendar(matches)
+
+    filename = f"{team['name']}.ics"
+    with open(filename, "w", encoding="utf-8") as f:
+        f.writelines(cal)
+
+    print(f"Erzeugt: {filename}")
+
