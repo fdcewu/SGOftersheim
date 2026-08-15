@@ -4,7 +4,53 @@ from ics import Calendar, Event
 from datetime import datetime, timedelta
 import json
 
+# ---------------------------------------------------------
+# SPIELORT EXTRAKTION
+# ---------------------------------------------------------
+def fetch_venue(match_url):
+    """Extrahiert den Spielort von der Spielseite (robust)."""
+    if not match_url:
+        return ""
+
+    try:
+        html = requests.get(match_url).text
+        soup = BeautifulSoup(html, "html.parser")
+
+        # Hauptselektor – funktioniert bei allen aktuellen fussball.de-Spielseiten
+        loc = soup.select_one("a.location")
+        if loc:
+            return loc.get_text(strip=True)
+
+        # Fallbacks für ältere oder mobile Seiten
+        fallback_selectors = [
+            ".venue-name",
+            ".match-location",
+            ".location-name",
+            "div.venue",
+            "span.venue",
+            ".match-info-location"
+        ]
+
+        for sel in fallback_selectors:
+            el = soup.select_one(sel)
+            if el:
+                text = el.get_text(strip=True)
+                if text:
+                    return text
+
+    except Exception:
+        pass
+
+    return ""
+
+
+# ---------------------------------------------------------
+# SPIELE AUS MANNSCHAFTSSEITE LADEN
+# ---------------------------------------------------------
 def fetch_matches(team_url):
+    """Liest alle Spiele einer Mannschaft aus der fussball.de-Mannschaftsseite."""
+
+    # Hash-Fragment entfernen (#!/)
     if "#!" in team_url:
         team_url = team_url.split("#!")[0]
 
@@ -16,6 +62,8 @@ def fetch_matches(team_url):
     current_competition = None
 
     for row in soup.select("tr"):
+
+        # 1. row-headline → Datum + Uhrzeit + Wettbewerb
         if "row-headline" in row.get("class", []):
             headline = row.get_text(" ", strip=True)
             parts = headline.split("|")
@@ -25,9 +73,11 @@ def fetch_matches(team_url):
 
             raw = date_part.replace("Uhr", "").strip()
 
+            # Wochentag entfernen, falls vorhanden
             if "," in raw:
                 raw = raw.split(",", 1)[1].strip()
 
+            # Uhrzeit vorhanden?
             if "-" in raw:
                 dt = datetime.strptime(raw, "%d.%m.%Y - %H:%M")
             else:
@@ -37,6 +87,7 @@ def fetch_matches(team_url):
             current_competition = comp_part
             continue
 
+        # 2. echte Spielzeile → Teams
         if row.select_one(".column-club"):
             clubs = row.select(".column-club .club-name")
             if len(clubs) < 2:
@@ -45,16 +96,26 @@ def fetch_matches(team_url):
             home = clubs[0].get_text(strip=True)
             away = clubs[1].get_text(strip=True)
 
+            # Link zur Spielseite → für Spielort
+            score_link = row.select_one(".column-score a")
+            match_url = score_link["href"] if score_link else ""
+
+            venue = fetch_venue(match_url)
+
             matches.append({
                 "title": f"{home} - {away}",
                 "start": current_date,
                 "end": current_date + timedelta(minutes=90),
-                "league": current_competition
+                "league": current_competition,
+                "location": venue
             })
 
     return matches
 
 
+# ---------------------------------------------------------
+# ICS ERZEUGEN
+# ---------------------------------------------------------
 def build_calendar(matches):
     cal = Calendar()
     for m in matches:
@@ -62,17 +123,27 @@ def build_calendar(matches):
         e.name = m["title"]
         e.begin = m["start"]
         e.end = m["end"]
+
+        # WICHTIG: location darf NIE None sein
+        e.location = m["location"] or ""
+
+        # Liga als Beschreibung
         e.description = m["league"]
+
         cal.events.add(e)
     return cal
 
 
+# ---------------------------------------------------------
+# HAUPTPROGRAMM
+# ---------------------------------------------------------
 with open("teams.json", "r") as f:
     teams = json.load(f)
 
 for team in teams:
     matches = fetch_matches(team["url"])
-    print("Matches gefunden:", len(matches))   # ← HIER EINSETZEN
+    print("Matches gefunden:", len(matches))
+
     cal = build_calendar(matches)
 
     filename = f"{team['name']}.ics"
