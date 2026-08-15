@@ -86,8 +86,7 @@ def fetch_matches(team_url):
                 "start": current_date,
                 "end": current_date + timedelta(minutes=90),
                 "location": venue,
-                "league": current_competition,
-                "url": match_url
+                "league": current_competition
             })
 
     return matches
@@ -101,7 +100,10 @@ def build_calendar(matches):
         e.begin = m["start"]
         e.end = m["end"]
         e.location = m["location"]
-        e.description = f"{m['league']}\n{m['url']}"
+
+        # 👉 Nur die Liga, keine URL
+        e.description = m["league"]
+
         cal.events.add(e)
     return cal
 
@@ -118,4 +120,3 @@ for team in teams:
         f.writelines(cal)
 
     print(f"Erzeugt: {filename}")
-
