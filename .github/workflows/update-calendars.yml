@@ -2,7 +2,7 @@ name: Update SG Oftersheim Kalender
 
 on:
   schedule:
-    - cron: "0 6 * * *"   # jeden Tag um 06:00
+    - cron: "0 6 * * *"   # jeden Tag um 06:00 Uhr
   workflow_dispatch:
 
 jobs:
@@ -23,8 +23,5 @@ jobs:
           pip install requests beautifulsoup4 ics
 
       - name: Run calendar generator
-        id: runscript
         run: |
           python generate_calendars.py
-
-
