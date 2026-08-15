@@ -94,4 +94,5 @@ for team in teams:
     with open(filename, "w", encoding="utf-8") as f:
         f.write(cal.serialize())   # WICHTIG: vollständiger ICS-Export
 
-    print(f"Erzeugt: {filename} (Events: {len(matches
+    print(f"Erzeugt: {filename} (Events: {len(matches)})")
+
