@@ -10,24 +10,37 @@ def fetch_matches(team_url):
 
     matches = []
 
-    # Neue fussball.de Struktur: Spiele stehen in div.match-row
-    rows = soup.select("div.match-row")
+    # Neue fussball.de Struktur: Spiele stehen in div.match
+    rows = soup.select("div.match")
 
     for row in rows:
         try:
-            home = row.select_one(".team-home .team-name").get_text(strip=True)
-            away = row.select_one(".team-away .team-name").get_text(strip=True)
+            # Teamnamen
+            teams = row.select(".team-name")
+            if len(teams) < 2:
+                continue
+            home = teams[0].get_text(strip=True)
+            away = teams[1].get_text(strip=True)
 
-            date_text = row.select_one(".match-date").get_text(strip=True)
-            time_text = row.select_one(".match-time").get_text(strip=True)
+            # Datum + Uhrzeit
+            date_el = row.select_one(".match-date")
+            time_el = row.select_one(".match-time")
+
+            if not date_el or not time_el:
+                continue
+
+            date_text = date_el.get_text(strip=True)
+            time_text = time_el.get_text(strip=True)
 
             dt = datetime.strptime(f"{date_text} {time_text}", "%d.%m.%Y %H:%M")
 
-            venue = row.select_one(".match-venue")
-            venue = venue.get_text(strip=True) if venue else "Unbekannt"
+            # Spielort
+            venue_el = row.select_one(".venue")
+            venue = venue_el.get_text(strip=True) if venue_el else "Unbekannt"
 
-            league = row.select_one(".match-league")
-            league = league.get_text(strip=True) if league else ""
+            # Liga / Wettbewerb
+            league_el = row.select_one(".competition-name")
+            league = league_el.get_text(strip=True) if league_el else ""
 
             matches.append({
                 "title": f"{home} - {away}",
