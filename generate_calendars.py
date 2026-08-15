@@ -72,6 +72,7 @@ with open("teams.json", "r") as f:
 
 for team in teams:
     matches = fetch_matches(team["url"])
+    print("Matches gefunden:", len(matches))   # ← HIER EINSETZEN
     cal = build_calendar(matches)
 
     filename = f"{team['name']}.ics"
