@@ -2,83 +2,83 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-fc-tuerkspor-mannheim-flex/-/spiel/031G14K37C000000VS5489BTVVG7L386
-DTEND:20260927T183000Z
-LOCATION:Unbekannt
-DTSTART:20260927T170000Z
-SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - FC Türkspor Mannheim (flex)
-UID:feabd8c2-bcc4-4415-8b5a-f15fb8141e4a@feab.org
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/vfr-mannheim-spg-muehlhausen-2-oftersheim/-/spiel/031G14K20C000000VS5489BTVVG7L386
+DTEND:20261115T183000Z
+LOCATION:Kunstrasenplatz\, VfR-Jugend- & Sportzentrum Kunstrasenplatz 2\, Josef-Bußjäger-Weg\, 68165 Mannheim
+DTSTART:20261115T170000Z
+SUMMARY:VfR Mannheim - SpG Mühlhausen 2 /​ Oftersheim
+UID:192c9da9-7e9b-48bf-9884-e7c6d6185b4b@192c.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/ssv-vogelstang-spg-muehlhausen-2-oftersheim/-/spiel/031G14K2CK000000VS5489BTVVG7L386
 DTEND:20261024T183000Z
-LOCATION:Unbekannt
+LOCATION:Kunstrasenplatz\, SSV Vogelstang\, Auf den Ried 8\, 68259 Mannheim
 DTSTART:20261024T170000Z
 SUMMARY:SSV Vogelstang - SpG Mühlhausen 2 /​ Oftersheim
-UID:99860781-0284-492d-9dd5-61bb9332a347@9986.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/polizei-sv-mannheim-2-spg-muehlhausen-2-oftersheim/-/spiel/031G14K3AS000000VS5489BTVVG7L386
-DTEND:20260919T183000Z
-LOCATION:Unbekannt
-DTSTART:20260919T170000Z
-SUMMARY:Polizei SV Mannheim 2 - SpG Mühlhausen 2 /​ Oftersheim
-UID:df6bbcc2-43dd-4036-a533-42d392a76a21@df6b.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-tsv-handschuhsheim/-/spiel/031G14K2KG000000VS5489BTVVG7L386
-DTEND:20261018T183000Z
-LOCATION:Unbekannt
-DTSTART:20261018T170000Z
-SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - TSV Handschuhsheim
-UID:f94afb93-6bc3-401c-ac56-0fe72623ea0e@f94a.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/vfr-mannheim-spg-muehlhausen-2-oftersheim/-/spiel/031G14K20C000000VS5489BTVVG7L386
-DTEND:20261115T183000Z
-LOCATION:Unbekannt
-DTSTART:20261115T170000Z
-SUMMARY:VfR Mannheim - SpG Mühlhausen 2 /​ Oftersheim
-UID:fff6101b-bbd3-49f1-bac7-9c4a29a027bd@fff6.org
+UID:b996f70e-5631-4d10-9709-84b8891d0c67@b996.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-sg-hohensachsen-2/-/spiel/031G14K3L8000000VS5489BTVVG7L386
 DTEND:20260913T183000Z
-LOCATION:Unbekannt
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260913T170000Z
 SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - SG Hohensachsen 2
-UID:d72cb061-651b-4d24-8352-1f9cd996e766@d72c.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-spg-hd-kirchheim-2-ziegelhausen-neckargemuend/-/spiel/031G14K25C000000VS5489BTVVG7L386
-DTEND:20261108T183000Z
-LOCATION:Unbekannt
-DTSTART:20261108T170000Z
-SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - SpG HD-Kirchheim 2/​ Ziegelhausen /​ Neckargemünd
-UID:3ab0c861-2630-4fcf-93ab-bbb7183c75fb@3ab0.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesfreundschaftsspiele\nhttps://www.fussball.de/spiel/spg-dielheim-wiesloch-spg-muehlhausen-2-oftersheim/-/spiel/031BP5VDUO000000VS5489BUVUR5FS5A
-DTEND:20260909T210000Z
-LOCATION:Unbekannt
-DTSTART:20260909T193000Z
-SUMMARY:SpG Dielheim/​Wiesloch - SpG Mühlhausen 2 /​ Oftersheim
-UID:a8b962c1-4a86-4894-8926-0c0730b53fc9@a8b9.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/vfb-gartenstadt-spg-muehlhausen-2-oftersheim/-/spiel/031G14K31S000000VS5489BTVVG7L386
-DTEND:20261004T183000Z
-LOCATION:Unbekannt
-DTSTART:20261004T170000Z
-SUMMARY:VfB Gartenstadt - SpG Mühlhausen 2 /​ Oftersheim
-UID:acc4a7e6-5c78-4a23-965a-ee72e9bf88af@acc4.org
+UID:942fed09-f067-49b0-a765-d6b5230be8d6@942f.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/tsv-amicitia-viernheim-2-spg-muehlhausen-2-oftersheim/-/spiel/031G14K2NG000000VS5489BTVVG7L386
 DTEND:20261011T123000Z
-LOCATION:Unbekannt
+LOCATION:Rasenplatz\, Stadion Lorscher Straße Rasen1\, Lorscher Str. 84\, 68519 Viernheim
 DTSTART:20261011T110000Z
 SUMMARY:TSV Amicitia Viernheim 2 - SpG Mühlhausen 2 /​ Oftersheim
-UID:24f4a6f0-ce5c-4a88-ac2a-338e64851f10@24f4.org
+UID:8888f47d-f411-41dd-a773-6390543a021e@8888.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/vfb-gartenstadt-spg-muehlhausen-2-oftersheim/-/spiel/031G14K31S000000VS5489BTVVG7L386
+DTEND:20261004T183000Z
+LOCATION:Kunstrasenplatz\, VfB Gartenstadt KR\, Anemonenweg 20-40\, 68305 Mannheim
+DTSTART:20261004T170000Z
+SUMMARY:VfB Gartenstadt - SpG Mühlhausen 2 /​ Oftersheim
+UID:020b9937-9c1e-4082-8a57-0529d45ff896@020b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-tsv-handschuhsheim/-/spiel/031G14K2KG000000VS5489BTVVG7L386
+DTEND:20261018T183000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261018T170000Z
+SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - TSV Handschuhsheim
+UID:0a57c00c-2dc3-487c-bfb1-b3675a9b59d0@0a57.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesfreundschaftsspiele\nhttps://www.fussball.de/spiel/spg-dielheim-wiesloch-spg-muehlhausen-2-oftersheim/-/spiel/031BP5VDUO000000VS5489BUVUR5FS5A
+DTEND:20260909T210000Z
+LOCATION:Rasenplatz\, Pfarrer Martin-Walter-Stadion\, Am Sportplatz \, 69234 Dielheim
+DTSTART:20260909T193000Z
+SUMMARY:SpG Dielheim/​Wiesloch - SpG Mühlhausen 2 /​ Oftersheim
+UID:8d8ae0d4-487c-4caf-8018-d8843b59eb64@8d8a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/polizei-sv-mannheim-2-spg-muehlhausen-2-oftersheim/-/spiel/031G14K3AS000000VS5489BTVVG7L386
+DTEND:20260919T183000Z
+LOCATION:Kunstrasenplatz\, Polizei Mannheim\, Im Pfeifferswörth\, 68167 Mannheim
+DTSTART:20260919T170000Z
+SUMMARY:Polizei SV Mannheim 2 - SpG Mühlhausen 2 /​ Oftersheim
+UID:f9371fa4-be82-463d-a84e-7895eb8eb2cc@f937.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-spg-hd-kirchheim-2-ziegelhausen-neckargemuend/-/spiel/031G14K25C000000VS5489BTVVG7L386
+DTEND:20261108T183000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261108T170000Z
+SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - SpG HD-Kirchheim 2/​ Ziegelhausen /​ Neckargemünd
+UID:ab3aaf1c-741d-4cd7-b485-9dd91c4fbec8@ab3a.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga\nhttps://www.fussball.de/spiel/spg-muehlhausen-2-oftersheim-fc-tuerkspor-mannheim-flex/-/spiel/031G14K37C000000VS5489BTVVG7L386
+DTEND:20260927T183000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260927T170000Z
+SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - FC Türkspor Mannheim (flex)
+UID:ed91910d-9a08-45dc-a383-94cde607ee42@ed91.org
 END:VEVENT
 END:VCALENDAR
