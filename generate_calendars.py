@@ -28,11 +28,6 @@ def fetch_matches(team_url):
             date_part = parts[0].strip()
             comp_part = parts[1].strip() if len(parts) > 1 else ""
 
-            # Beispiel:
-            # "Mittwoch, 09.09.2026 - 19:30 Uhr"
-            # oder:
-            # "09.09.2026 - 19:30 Uhr"
-
             raw = date_part.replace("Uhr", "").strip()
 
             # Wochentag entfernen, falls vorhanden
@@ -50,4 +45,53 @@ def fetch_matches(team_url):
             continue
 
         # 2. echte Spielzeile → Teams
-        if row.select_one
+        if row.select_one(".column-club"):
+            clubs = row.select(".column-club .club-name")
+            if len(clubs) < 2:
+                continue
+
+            home = clubs[0].get_text(strip=True)
+            away = clubs[1].get_text(strip=True)
+
+            matches.append({
+                "title": f"{home} - {away}",
+                "start": current_date,
+                "end": current_date + timedelta(minutes=90),
+                "league": current_competition
+            })
+
+    return matches
+
+
+def build_calendar(matches):
+    """Erzeugt einen ICS-Kalender aus den Matchdaten."""
+    cal = Calendar()
+    for m in matches:
+        e = Event()
+        e.name = m["title"]
+        e.begin = m["start"]
+        e.end = m["end"]
+
+        # Nur die Liga, kein Spielort
+        e.description = m["league"]
+
+        cal.events.add(e)
+    return cal
+
+
+# ------------------------------
+# Hauptprogramm
+# ------------------------------
+
+with open("teams.json", "r") as f:
+    teams = json.load(f)
+
+for team in teams:
+    matches = fetch_matches(team["url"])
+    cal = build_calendar(matches)
+
+    filename = f"{team['name']}.ics"
+    with open(filename, "w", encoding="utf-8") as f:
+        f.write(cal.serialize())   # WICHTIG: vollständiger ICS-Export
+
+    print(f"Erzeugt: {filename} (Events: {len(matches
