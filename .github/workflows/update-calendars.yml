@@ -1,0 +1,37 @@
+name: Update All Team Calendars
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+      with:
+        ref: main
+
+    - name: Install Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: |
+        pip install requests beautifulsoup4 ics
+
+    - name: Generate all ICS files
+      run: |
+        python generate_calendars.py
+
+    - name: Commit and push
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add *.ics
+        git commit -m "Update all team calendars"
+        git push origin main
