@@ -2,60 +2,12 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Kreisfreundschaftsspiele
-DTEND:20260823T133000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260823T120000Z
-SUMMARY:SG  Oftersheim 3 - SV Altlußheim 2
-UID:25867e23-d3ee-4af5-ab67-f7074775cdeb@2586.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B
-DTEND:20261011T143000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20261011T130000Z
-SUMMARY:SG  Oftersheim 3 - FV 1918 Brühl 2
-UID:da3a6688-dacd-41dd-852a-158070ea5c33@da3a.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B
-DTEND:20260830T143000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260830T130000Z
-SUMMARY:SG  Oftersheim 3 - TSG Eintracht Plankstadt 2
-UID:dccff484-4ff5-417d-ba5c-f30279b034d9@dccf.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B
-DTEND:20261018T140000Z
-LOCATION:Kunstrasenplatz\, SC 08 Reilingen KR\, Hauptstr. 209\, 68799 Reilingen
-DTSTART:20261018T123000Z
-SUMMARY:SC 08 Reilingen 2 - SG  Oftersheim 3
-UID:d3e7b582-d38f-442f-9d6a-f9e4b2b8cdc1@d3e7.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B
-DTEND:20260913T143000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260913T130000Z
-SUMMARY:SG  Oftersheim 3 - SV Altlußheim
-UID:76e54042-2e2a-42fa-942e-2fe00714b1b0@76e5.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B
-DTEND:20260927T143000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260927T130000Z
-SUMMARY:SG  Oftersheim 3 - TSV Neckarau 2
-UID:e38faf22-7441-4368-bf74-f6f134ed3dad@e38f.org
-END:VEVENT
-BEGIN:VEVENT
 DESCRIPTION:Kreisklasse B
 DTEND:20260920T163000Z
 LOCATION:Kunstrasenplatz\, Badenia Hirschacker\, Eiskellerweg 1\, 68723 Schwetzingen
 DTSTART:20260920T150000Z
 SUMMARY:KSC Schwetzingen - SG  Oftersheim 3
-UID:7feb3c34-0be3-4a7a-a747-76b706f8259b@7feb.org
+UID:fa476b54-244c-427c-a5c3-dcdb8795f972@fa47.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Kreisklasse B
@@ -63,7 +15,15 @@ DTEND:20261004T163000Z
 LOCATION:Kunstrasenplatz\, Germ. Friedrichsfeld Stadion Freie Platte\, Friedrichsfelder Eck 2\, 68229 Mannheim
 DTSTART:20261004T150000Z
 SUMMARY:FC Germania Friedrichsfeld - SG  Oftersheim 3
-UID:a06ad7e3-1b17-4dfb-9343-2ee0fa510f3a@a06a.org
+UID:fef68074-0674-4ea9-9c05-44c27f35e6d5@fef6.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisfreundschaftsspiele
+DTEND:20260823T133000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260823T120000Z
+SUMMARY:SG  Oftersheim 3 - SV Altlußheim 2
+UID:6a8fadc5-7a4d-495b-886e-e2853634f106@6a8f.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Kreisklasse B
@@ -71,7 +31,23 @@ DTEND:20260906T140000Z
 LOCATION:Kunstrasenplatz\, Waldstadion Hockenheim\, Waldstraße 3\, 68766 Hockenheim
 DTSTART:20260906T123000Z
 SUMMARY:FV 08 Hockenheim 2 - SG  Oftersheim 3
-UID:b7e367b0-4638-448b-a1bd-3ec620aa4913@b7e3.org
+UID:904b6bc5-0c31-4c32-9b7a-dea9d6bad346@904b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B
+DTEND:20260913T143000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260913T130000Z
+SUMMARY:SG  Oftersheim 3 - SV Altlußheim
+UID:d30b347f-67a0-4a1b-ab87-672cce89164f@d30b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B
+DTEND:20260927T143000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260927T130000Z
+SUMMARY:SG  Oftersheim 3 - TSV Neckarau 2
+UID:544f4832-eeba-4252-98e5-f74a92df81dc@544f.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Kreisfreundschaftsspiele
@@ -79,6 +55,30 @@ DTEND:20260816T163000Z
 LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260816T150000Z
 SUMMARY:SG  Oftersheim 3 - SV Philippsburg 2
-UID:39b9155a-459d-4f51-bc6d-dd3a7688adcd@39b9.org
+UID:bffd5b1c-2006-4115-99b0-a89c18794807@bffd.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B
+DTEND:20260830T143000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260830T130000Z
+SUMMARY:SG  Oftersheim 3 - TSG Eintracht Plankstadt 2
+UID:3e547141-a71d-467b-bc8d-f1137b9797ff@3e54.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B
+DTEND:20261011T143000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261011T130000Z
+SUMMARY:SG  Oftersheim 3 - FV 1918 Brühl 2
+UID:f61dd24e-c79b-4b4c-8605-ac4d32b231d5@f61d.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B
+DTEND:20261018T140000Z
+LOCATION:Kunstrasenplatz\, SC 08 Reilingen KR\, Hauptstr. 209\, 68799 Reilingen
+DTSTART:20261018T123000Z
+SUMMARY:SC 08 Reilingen 2 - SG  Oftersheim 3
+UID:0650ec4d-9f1e-43ad-b1ff-3a5f09e46a40@0650.org
 END:VEVENT
 END:VCALENDAR
