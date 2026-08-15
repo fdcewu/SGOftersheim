@@ -5,15 +5,38 @@ from datetime import datetime, timedelta
 import json
 
 def fetch_venue(match_url):
-    """Extrahiert den Spielort von der Spielseite."""
+    """Extrahiert den Spielort von der Spielseite (robust)."""
     try:
         html = requests.get(match_url).text
         soup = BeautifulSoup(html, "html.parser")
-        venue_el = soup.select_one(".venue-name")
-        if venue_el:
-            return venue_el.get_text(strip=True)
-    except:
+
+        # Hauptselektor – funktioniert bei allen aktuellen fussball.de-Spielseiten
+        loc = soup.select_one("a.location")
+        if loc:
+            text = loc.get_text(strip=True)
+            if text:
+                return text
+
+        # Fallbacks für ältere oder mobile Seiten
+        fallback_selectors = [
+            ".venue-name",
+            ".match-location",
+            ".location-name",
+            "div.venue",
+            "span.venue",
+            ".match-info-location"
+        ]
+
+        for sel in fallback_selectors:
+            el = soup.select_one(sel)
+            if el:
+                text = el.get_text(strip=True)
+                if text:
+                    return text
+
+    except Exception:
         pass
+
     return "Unbekannt"
 
 
@@ -33,6 +56,7 @@ def fetch_matches(team_url):
             date_part = parts[0].strip()
             comp_part = parts[1].strip() if len(parts) > 1 else ""
 
+            # Beispiel: "Mittwoch, 09.09.2026 - 19:30 Uhr"
             date_text = date_part.split(",")[1].strip()
             date_text = date_text.replace("Uhr", "").strip()
             dt = datetime.strptime(date_text, "%d.%m.%Y - %H:%M")
@@ -51,46 +75,4 @@ def fetch_matches(team_url):
             away = clubs[1].get_text(strip=True)
 
             # Spiel-URL
-            score_link = row.select_one(".column-score a")
-            match_url = score_link["href"] if score_link else ""
-
-            # Spielort extrahieren
-            venue = fetch_venue(match_url)
-
-            matches.append({
-                "title": f"{home} - {away}",
-                "start": current_date,
-                "end": current_date + timedelta(minutes=90),
-                "location": venue,
-                "league": current_competition,
-                "url": match_url
-            })
-
-    return matches
-
-
-def build_calendar(matches):
-    cal = Calendar()
-    for m in matches:
-        e = Event()
-        e.name = m["title"]
-        e.begin = m["start"]
-        e.end = m["end"]
-        e.location = m["location"]
-        e.description = f"{m['league']}\n{m['url']}"
-        cal.events.add(e)
-    return cal
-
-
-with open("teams.json", "r") as f:
-    teams = json.load(f)
-
-for team in teams:
-    matches = fetch_matches(team["url"])
-    cal = build_calendar(matches)
-
-    filename = f"{team['name']}.ics"
-    with open(filename, "w", encoding="utf-8") as f:
-        f.writelines(cal)
-
-    print(f"Erzeugt: {filename}")
+            score_link = row.select_one(".column
