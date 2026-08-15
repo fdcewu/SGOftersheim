@@ -146,7 +146,8 @@ for team in teams:
 
     cal = build_calendar(matches)
 
-    filename = f"{team['name']}.ics"
+    filename = f"calendars/{team['name']}.ics"
+
     with open(filename, "w", encoding="utf-8") as f:
         f.write(cal.serialize())
 
