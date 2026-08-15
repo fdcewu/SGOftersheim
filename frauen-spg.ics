@@ -3,19 +3,11 @@ VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
 DESCRIPTION:Landesliga
-DTEND:20261004T183000Z
-LOCATION:Kunstrasenplatz\, VfB Gartenstadt KR\, Anemonenweg 20-40\, 68305 Mannheim
-DTSTART:20261004T170000Z
-SUMMARY:VfB Gartenstadt - SpG Mühlhausen 2 /​ Oftersheim
-UID:fbe77a37-8762-4d70-b2e8-edcd267b562a@fbe7.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
 DTEND:20261115T183000Z
 LOCATION:Kunstrasenplatz\, VfR-Jugend- & Sportzentrum Kunstrasenplatz 2\, Josef-Bußjäger-Weg\, 68165 Mannheim
 DTSTART:20261115T170000Z
 SUMMARY:VfR Mannheim - SpG Mühlhausen 2 /​ Oftersheim
-UID:62eab16a-8929-4176-8026-199749b92a52@62ea.org
+UID:e1245276-952e-4dfe-aa40-544ec4064592@e124.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Landesliga
@@ -23,55 +15,7 @@ DTEND:20260913T183000Z
 LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260913T170000Z
 SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - SG Hohensachsen 2
-UID:95f856ec-d07c-4a3e-9b56-17e7262096e0@95f8.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261024T183000Z
-LOCATION:Kunstrasenplatz\, SSV Vogelstang\, Auf den Ried 8\, 68259 Mannheim
-DTSTART:20261024T170000Z
-SUMMARY:SSV Vogelstang - SpG Mühlhausen 2 /​ Oftersheim
-UID:9980c7b4-ff63-4a3a-8bb7-09da8f10986b@9980.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20260927T183000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260927T170000Z
-SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - FC Türkspor Mannheim (flex)
-UID:0e13a4c8-b3b0-48f9-99bf-5aec7c6db375@0e13.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20260919T183000Z
-LOCATION:Kunstrasenplatz\, Polizei Mannheim\, Im Pfeifferswörth\, 68167 Mannheim
-DTSTART:20260919T170000Z
-SUMMARY:Polizei SV Mannheim 2 - SpG Mühlhausen 2 /​ Oftersheim
-UID:00ef7399-eabe-4bd2-9902-1daac8bf5f40@00ef.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261011T123000Z
-LOCATION:Rasenplatz\, Stadion Lorscher Straße Rasen1\, Lorscher Str. 84\, 68519 Viernheim
-DTSTART:20261011T110000Z
-SUMMARY:TSV Amicitia Viernheim 2 - SpG Mühlhausen 2 /​ Oftersheim
-UID:fc5956c3-1dae-47e8-bcb9-d1bf2d8106f2@fc59.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261018T183000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20261018T170000Z
-SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - TSV Handschuhsheim
-UID:ce6e62c7-4095-4b0c-8cd9-2074d9aeaf55@ce6e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesfreundschaftsspiele
-DTEND:20260909T210000Z
-LOCATION:Rasenplatz\, Pfarrer Martin-Walter-Stadion\, Am Sportplatz \, 69234 Dielheim
-DTSTART:20260909T193000Z
-SUMMARY:SpG Dielheim/​Wiesloch - SpG Mühlhausen 2 /​ Oftersheim
-UID:6522a0cc-8ec7-42c2-b40e-b5cb0e7ffdd0@6522.org
+UID:da9eacd0-0382-4e4f-a1f3-7176ff39b9eb@da9e.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Landesliga
@@ -79,6 +23,62 @@ DTEND:20261108T183000Z
 LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20261108T170000Z
 SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - SpG HD-Kirchheim 2/​ Ziegelhausen /​ Neckargemünd
-UID:8d210306-3d88-48e9-98c3-0a9b580fb898@8d21.org
+UID:aab0dcf5-46e7-4233-8a78-f2ad9a938bf8@aab0.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20260919T183000Z
+LOCATION:Kunstrasenplatz\, Polizei Mannheim\, Im Pfeifferswörth\, 68167 Mannheim
+DTSTART:20260919T170000Z
+SUMMARY:Polizei SV Mannheim 2 - SpG Mühlhausen 2 /​ Oftersheim
+UID:32d75f6f-7807-4146-ab59-dd06849ca757@32d7.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20261018T183000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261018T170000Z
+SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - TSV Handschuhsheim
+UID:93f3158b-2c6c-496c-8c8b-70009610a965@93f3.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20261011T123000Z
+LOCATION:Rasenplatz\, Stadion Lorscher Straße Rasen1\, Lorscher Str. 84\, 68519 Viernheim
+DTSTART:20261011T110000Z
+SUMMARY:TSV Amicitia Viernheim 2 - SpG Mühlhausen 2 /​ Oftersheim
+UID:d0b09108-9b06-4c07-8b2d-0213419664a2@d0b0.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20260927T183000Z
+LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260927T170000Z
+SUMMARY:SpG Mühlhausen 2 /​ Oftersheim - FC Türkspor Mannheim (flex)
+UID:9fdc8588-2733-4177-9517-2830a8e51022@9fdc.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20261004T183000Z
+LOCATION:Kunstrasenplatz\, VfB Gartenstadt KR\, Anemonenweg 20-40\, 68305 Mannheim
+DTSTART:20261004T170000Z
+SUMMARY:VfB Gartenstadt - SpG Mühlhausen 2 /​ Oftersheim
+UID:b1b6400e-c7cc-4e1d-816e-949b08204fca@b1b6.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga
+DTEND:20261024T183000Z
+LOCATION:Kunstrasenplatz\, SSV Vogelstang\, Auf den Ried 8\, 68259 Mannheim
+DTSTART:20261024T170000Z
+SUMMARY:SSV Vogelstang - SpG Mühlhausen 2 /​ Oftersheim
+UID:0bc92b4b-b661-4e6d-b581-1ae607cf1530@0bc9.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesfreundschaftsspiele
+DTEND:20260909T210000Z
+LOCATION:Rasenplatz\, Pfarrer Martin-Walter-Stadion\, Am Sportplatz \, 69234 Dielheim
+DTSTART:20260909T193000Z
+SUMMARY:SpG Dielheim/​Wiesloch - SpG Mühlhausen 2 /​ Oftersheim
+UID:61174b61-6e4b-4722-8a3b-69fa72204775@6117.org
 END:VEVENT
 END:VCALENDAR
