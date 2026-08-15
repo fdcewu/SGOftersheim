@@ -12,6 +12,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: false   # <<< WICHTIG!
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -50,29 +52,4 @@ jobs:
           password: ${{ secrets.MAIL_PASS }}
           subject: "success: ${{ github.run_started_at }}"
           to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow wurde erfolgreich ausgeführt.
-            Zeitpunkt: ${{ github.run_started_at }}
-
-      # ---------------------------------------------------------
-      # ERROR EMAIL (nur wenn ENABLE_EMAIL == true)
-      # ---------------------------------------------------------
-      - name: Send error email
-        if: failure() && env.ENABLE_EMAIL == 'true'
-        uses: dawidd6/action-send-mail@v3
-        env:
-          ENABLE_EMAIL: ${{ secrets.ENABLE_EMAIL }}
-        with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASS }}
-          subject: "error: ${{ github.run_started_at }}"
-          to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow ist FEHLERHAFT beendet.
-            Zeitpunkt: ${{ github.run_started_at }}
-            Logs:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          from
