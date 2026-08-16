@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 from ics import Calendar, Event
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import json
 import os
 import time
@@ -100,6 +100,7 @@ def fetch_matches(team_url):
 
     for row in soup.select("tr"):
 
+        # Datum + Wettbewerb
         if "row-headline" in row.get("class", []):
             headline = row.get_text(" ", strip=True)
             parts = headline.split("|")
@@ -109,18 +110,24 @@ def fetch_matches(team_url):
 
             raw = date_part.replace("Uhr", "").strip()
 
+            # Wochentag entfernen
             if "," in raw:
                 raw = raw.split(",", 1)[1].strip()
 
+            # Zeitformat erkennen
             if "-" in raw:
                 dt = datetime.strptime(raw, "%d.%m.%Y - %H:%M")
             else:
                 dt = datetime.strptime(raw, "%d.%m.%Y")
 
+            # **Zeitzone setzen → Deutschland (UTC+2)**
+            dt = dt.replace(tzinfo=timezone(timedelta(hours=2)))
+
             current_date = dt
             current_competition = comp_part
             continue
 
+        # Spielzeile
         if row.select_one(".column-club"):
             clubs = row.select(".column-club .club-name")
             if len(clubs) < 2:
