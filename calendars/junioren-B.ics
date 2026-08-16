@@ -2,153 +2,163 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DTEND:20241009T013000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20241009T000000Z
-SUMMARY:SG Oftersheim - Spvgg 06 Ketsch (Flex)
-UID:9f2e88c0-e202-4cc1-b2ce-c08844470c46@9f2e.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261010T153000Z
-LOCATION:Kunstrasenplatz\, VfL Kurpfalz Neckarau - Kunstrasenplatz 1\, Neckarauer Waldweg\, 68199 Mannheim
-DTSTART:20261010T140000Z
-SUMMARY:VfL Kurpfalz Neckarau - JSG Oftersheim /​ SV Rohrhof
-UID:6a31e621-347f-4828-8a45-992ad9bbf21a@6a31.org
-END:VEVENT
-BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
 DTEND:20250524T013000Z
-LOCATION:Kunstrasenplatz\, SV Laudenbach\, Dr.-Werner-Freyberg-Str. 5\, 69514 Laudenbach
+LOCATION:SV Laudenbach\, Dr.-Werner-Freyberg-Str. 5\, 69514 Laudenbach
 DTSTART:20250524T000000Z
 SUMMARY:JSG Nördliche Bergstraße - SG Oftersheim
-UID:d6979ce4-f847-45ef-b134-a900732af770@d697.org
+UID:b5e6f14b-8956-4849-95ae-41339493a370@b5e6.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Landesfreundschaftsspiele
+DESCRIPTION:Landesfreundschaftsspiele – Rasenplatz
 DTEND:20260829T133000Z
-LOCATION:Rasenplatz\, SKV Sandhofen NR\, Gaswerkstr. 25\, 68307 Mannheim
+LOCATION:SKV Sandhofen NR\, Gaswerkstr. 25\, 68307 Mannheim
 DTSTART:20260829T120000Z
 SUMMARY:SKV Sandhofen - JSG Oftersheim /​ SV Rohrhof
-UID:c4c2010f-417a-4884-a9a8-dbdf5f7dd1ca@c4c2.org
+UID:b5e7fb86-ca23-4267-94a3-842e9ef3bd56@b5e7.org
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
 DTEND:20260124T013000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260124T000000Z
 SUMMARY:SG Oftersheim - SV Rohrhof
-UID:b8169ffd-954d-4f52-8506-2311a4a2ba5a@b816.org
+UID:cb12cfc5-b874-4f49-a71d-be431bafe657@cb12.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreispokal
-DTEND:20261014T203000Z
-LOCATION:Kunstrasenplatz\, TSV Neckarau KR\, Kiesteichweg 9\, 68199 Mannheim
-DTSTART:20261014T190000Z
-SUMMARY:TSV Neckarau - JSG Oftersheim /​ SV Rohrhof
-UID:29d4cac7-663a-48a7-becb-6e7363e53c94@29d4.org
-END:VEVENT
-BEGIN:VEVENT
-DTEND:20250706T013000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20250706T000000Z
-SUMMARY:SG Oftersheim - Spvgg 06 Ketsch
-UID:ca832419-5cf2-44b1-b3b1-457bf47ea9c8@ca83.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
+DESCRIPTION:Landesliga – Kunstrasenplatz
 DTEND:20260919T163000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260919T150000Z
 SUMMARY:JSG Oftersheim /​ SV Rohrhof - TSV Amicitia Viernheim
-UID:e1aed45e-21ce-4b53-9277-e22160fcd988@e1ae.org
+UID:4aac5b13-aa6b-44a1-b4ab-d404b4303d79@4aac.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20260926T163000Z
-LOCATION:Rasenplatz\, SG Viktoria Mauer\, Kirchenstr. 28\, 69256 Mauer
-DTSTART:20260926T150000Z
-SUMMARY:JSG Mauer/​Lobbach - JSG Oftersheim /​ SV Rohrhof
-UID:3903c5be-9612-435e-b8a0-8bf4e6365b1b@3903.org
-END:VEVENT
-BEGIN:VEVENT
-DTEND:20260418T013000Z
-LOCATION:Kunstrasenplatz\, Badenia Hirschacker\, Eiskellerweg 1\, 68723 Schwetzingen
-DTSTART:20260418T000000Z
-SUMMARY:SV 98 Schwetzingen 2 - SG Oftersheim
-UID:4ba18763-d06d-48e6-9414-625283ab37be@4ba1.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261024T163000Z
-LOCATION:Rasenplatz\, FC Mühlhausen\, Bruchsaler Str. 38\, 69242 Mühlhausen
-DTSTART:20261024T150000Z
-SUMMARY:1. FC Mühlhausen - JSG Oftersheim /​ SV Rohrhof
-UID:a4971b91-5622-4383-89a9-2be16790ea25@a497.org
-END:VEVENT
-BEGIN:VEVENT
-DTEND:20260516T013000Z
-LOCATION:Kunstrasenplatz\, TSG Lützelsachsen\, Weimarer Str. 1\, 69469 Weinheim
-DTSTART:20260516T000000Z
-SUMMARY:TSG 91/​09 Lützelsachsen - SG Oftersheim
-UID:efe62917-c428-4324-9ed1-91a3dd403c23@efe6.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261107T163000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20261107T150000Z
-SUMMARY:JSG Oftersheim /​ SV Rohrhof - Eberbacher SC
-UID:fce1d082-5f25-4052-bb6b-2f95783aafe3@fce1.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20260912T143000Z
-LOCATION:Kunstrasenplatz\, Fußballcampus Heidelberg\, Tiergartenstr. 124\, 69120 Heidelberg
-DTSTART:20260912T130000Z
-SUMMARY:ASC Neuenheim - JSG Oftersheim /​ SV Rohrhof
-UID:dab31fc4-e2a8-4c3e-a24b-e8bd24a1d221@dab3.org
-END:VEVENT
-BEGIN:VEVENT
-DTEND:20240921T013000Z
-LOCATION:Kunstrasenplatz\, Enderle Sportpark-Kunstrasen\, Am Waldsportplatz 1\, 68775 Ketsch
-DTSTART:20240921T000000Z
-SUMMARY:Spvgg 06 Ketsch (Flex) - SG Oftersheim
-UID:495faa57-63b9-4710-979a-c39477265908@495f.org
-END:VEVENT
-BEGIN:VEVENT
-DTEND:20250125T013000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20250125T000000Z
-SUMMARY:SG Oftersheim - DJK/​FC Ziegelhausen-Peterstal
-UID:26404388-6d05-40b1-aa37-0a83b575f0f3@2640.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
-DTEND:20261003T163000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20261003T150000Z
-SUMMARY:JSG Oftersheim /​ SV Rohrhof - JSG Kaiserberg
-UID:e40cfe16-94f2-4f54-8f5e-e6e0bf35fc0d@e40c.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Landesliga
+DESCRIPTION:Landesliga – Kunstrasenplatz
 DTEND:20261017T163000Z
-LOCATION:Kunstrasenplatz\, SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20261017T150000Z
 SUMMARY:JSG Oftersheim /​ SV Rohrhof - VfB 1914 Leimen
-UID:1bfa454c-d67a-4406-88fe-304e922f4e70@1bfa.org
+UID:aefe0a54-ef10-401b-a73e-d8dd900328ce@aefe.org
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20260516T013000Z
+LOCATION:TSG Lützelsachsen\, Weimarer Str. 1\, 69469 Weinheim
+DTSTART:20260516T000000Z
+SUMMARY:TSG 91/​09 Lützelsachsen - SG Oftersheim
+UID:6cd0e440-9036-4d9a-96ad-5be69bf54eca@6cd0.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Rasenplatz
+DTEND:20261024T163000Z
+LOCATION:FC Mühlhausen\, Bruchsaler Str. 38\, 69242 Mühlhausen
+DTSTART:20261024T150000Z
+SUMMARY:1. FC Mühlhausen - JSG Oftersheim /​ SV Rohrhof
+UID:5c979094-e4b0-42e0-ad12-6272cb41a29b@5c97.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreispokal – Kunstrasenplatz
+DTEND:20261014T203000Z
+LOCATION:TSV Neckarau KR\, Kiesteichweg 9\, 68199 Mannheim
+DTSTART:20261014T190000Z
+SUMMARY:TSV Neckarau - JSG Oftersheim /​ SV Rohrhof
+UID:8975621e-0074-4a43-8a03-65f097253868@8975.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Kunstrasenplatz
+DTEND:20261003T163000Z
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261003T150000Z
+SUMMARY:JSG Oftersheim /​ SV Rohrhof - JSG Kaiserberg
+UID:57caf475-7a38-479f-adb0-d06f97baef35@57ca.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20250706T013000Z
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250706T000000Z
+SUMMARY:SG Oftersheim - Spvgg 06 Ketsch
+UID:0deb1cdf-5eb3-42b1-bdee-2f5ffdacef5c@0deb.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Rasenplatz
+DTEND:20260926T163000Z
+LOCATION:SG Viktoria Mauer\, Kirchenstr. 28\, 69256 Mauer
+DTSTART:20260926T150000Z
+SUMMARY:JSG Mauer/​Lobbach - JSG Oftersheim /​ SV Rohrhof
+UID:971f6703-088f-4ad3-9598-85eae2c6d3a8@971f.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20240921T013000Z
+LOCATION:Enderle Sportpark-Kunstrasen\, Am Waldsportplatz 1\, 68775 Ketsch
+DTSTART:20240921T000000Z
+SUMMARY:Spvgg 06 Ketsch (Flex) - SG Oftersheim
+UID:0745174d-aaac-4d8c-a2d9-cdb8d8602478@0745.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Kunstrasenplatz
+DTEND:20261010T153000Z
+LOCATION:VfL Kurpfalz Neckarau - Kunstrasenplatz 1\, Neckarauer Waldweg\, 68199 Mannheim
+DTSTART:20261010T140000Z
+SUMMARY:VfL Kurpfalz Neckarau - JSG Oftersheim /​ SV Rohrhof
+UID:8d19edcb-6166-40fc-a886-f4e2be7714d1@8d19.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20241009T013000Z
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20241009T000000Z
+SUMMARY:SG Oftersheim - Spvgg 06 Ketsch (Flex)
+UID:a941bcb8-2f86-4354-9a31-a6fb5cf356fb@a941.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
 DTEND:20251129T013000Z
-LOCATION:Kunstrasenplatz\, Türkspor Mannheim\, Gartenschauweg 24\, 68165 Mannheim
+LOCATION:Türkspor Mannheim\, Gartenschauweg 24\, 68165 Mannheim
 DTSTART:20251129T000000Z
 SUMMARY:Türkspor Mannheim (Flex) - SG Oftersheim
-UID:8145d933-bc23-47ab-b81e-012a3492bc05@8145.org
+UID:5441a5df-a4da-4547-8869-354de49f2146@5441.org
 END:VEVENT
 BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20250125T013000Z
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20250125T000000Z
+SUMMARY:SG Oftersheim - DJK/​FC Ziegelhausen-Peterstal
+UID:4272f5f2-bc10-4fd1-95e1-ee022492cb63@4272.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
 DTEND:20251115T013000Z
-LOCATION:Kunstrasenplatz\, DJK Feudenheim\, In der Anlage 11\, 68259 Mannheim
+LOCATION:DJK Feudenheim\, In der Anlage 11\, 68259 Mannheim
 DTSTART:20251115T000000Z
 SUMMARY:DJK Feudenheim - SG Oftersheim
-UID:d62362bd-4592-459b-9d23-2ef65a6fbc3c@d623.org
+UID:c346f9dd-8f6e-4878-892a-e6cbabaf661c@c346.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION: – Kunstrasenplatz
+DTEND:20260418T013000Z
+LOCATION:Badenia Hirschacker\, Eiskellerweg 1\, 68723 Schwetzingen
+DTSTART:20260418T000000Z
+SUMMARY:SV 98 Schwetzingen 2 - SG Oftersheim
+UID:1df53ffa-583c-49d1-b006-44d324a50384@1df5.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Kunstrasenplatz
+DTEND:20260912T143000Z
+LOCATION:Fußballcampus Heidelberg\, Tiergartenstr. 124\, 69120 Heidelberg
+DTSTART:20260912T130000Z
+SUMMARY:ASC Neuenheim - JSG Oftersheim /​ SV Rohrhof
+UID:8d88487e-a887-4044-906c-e79215cf3857@8d88.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Landesliga – Kunstrasenplatz
+DTEND:20261107T163000Z
+LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261107T150000Z
+SUMMARY:JSG Oftersheim /​ SV Rohrhof - Eberbacher SC
+UID:72e16983-20c7-4847-a82e-863eb38b8d52@72e1.org
 END:VEVENT
 END:VCALENDAR
