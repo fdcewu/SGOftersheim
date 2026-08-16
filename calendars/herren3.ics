@@ -2,36 +2,44 @@ BEGIN:VCALENDAR
 VERSION:2.0
 PRODID:ics.py - http://git.io/lLljaA
 BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, SG Oftersheim KR
+DTEND:20260927T143000Z
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260927T130000Z
+SUMMARY:SG  Oftersheim 3 - TSV Neckarau 2
+UID:67999f50-1b61-4eb2-8af9-627b997c8a94@6799.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, SG Oftersheim KR
+DTEND:20260913T143000Z
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260913T130000Z
+SUMMARY:SG  Oftersheim 3 - SV Altlußheim
+UID:272bf767-d281-4ae3-9cc1-fc88ede6fb23@272b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, Badenia Hirschacker
+DTEND:20260920T163000Z
+LOCATION:Eiskellerweg 1\, 68723 Schwetzingen
+DTSTART:20260920T150000Z
+SUMMARY:KSC Schwetzingen - SG  Oftersheim 3
+UID:208bce17-6188-4819-aecb-eea9a5779e2a@208b.org
+END:VEVENT
+BEGIN:VEVENT
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, SG Oftersheim KR
 DTEND:20260830T143000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260830T130000Z
 SUMMARY:SG  Oftersheim 3 - TSG Eintracht Plankstadt 2
-UID:713724b1-72a2-4906-8301-eb460f27aadd@7137.org
+UID:13b6c7b4-de9c-43a6-8542-deac839ca30d@13b6.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20261004T163000Z
-LOCATION:Germ. Friedrichsfeld Stadion Freie Platte\, Friedrichsfelder Eck 2\, 68229 Mannheim
-DTSTART:20261004T150000Z
-SUMMARY:FC Germania Friedrichsfeld - SG  Oftersheim 3
-UID:17201d0d-00c7-48dc-92de-bc056d0f0e85@1720.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20260906T140000Z
-LOCATION:Waldstadion Hockenheim\, Waldstraße 3\, 68766 Hockenheim
-DTSTART:20260906T123000Z
-SUMMARY:FV 08 Hockenheim 2 - SG  Oftersheim 3
-UID:f9b49973-caea-487f-99d5-1d6d39dc023f@f9b4.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20261011T143000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20261011T130000Z
-SUMMARY:SG  Oftersheim 3 - FV 1918 Brühl 2
-UID:862d0793-2d77-4256-af76-0bb90f2fcfd4@862d.org
+DESCRIPTION:Kreisfreundschaftsspiele – Kunstrasenplatz\, SG Oftersheim KR
+DTEND:20260816T163000Z
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20260816T150000Z
+SUMMARY:SG  Oftersheim 3 - SV Philippsburg 2
+UID:8b362e10-bfb4-4533-89c5-2eeaadbb2466@8b36.org
 END:VEVENT
 BEGIN:VEVENT
 DESCRIPTION:Kreisklasse B – Kunstrasenplatz
@@ -39,46 +47,38 @@ DTEND:20261018T140000Z
 LOCATION:SC 08 Reilingen KR\, Hauptstr. 209\, 68799 Reilingen
 DTSTART:20261018T123000Z
 SUMMARY:SC 08 Reilingen 2 - SG  Oftersheim 3
-UID:1933a827-6387-4e64-b9d5-412af4a537dd@1933.org
+UID:8f193e04-9116-4428-8f95-8b1ab68b69f6@8f19.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20260927T143000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260927T130000Z
-SUMMARY:SG  Oftersheim 3 - TSV Neckarau 2
-UID:a96473ad-3d28-4186-bdd3-24a97772b24c@a964.org
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, Germ. Friedrichsfeld Stadion Freie Platte
+DTEND:20261004T163000Z
+LOCATION:Friedrichsfelder Eck 2\, 68229 Mannheim
+DTSTART:20261004T150000Z
+SUMMARY:FC Germania Friedrichsfeld - SG  Oftersheim 3
+UID:def5413d-8ab9-40a2-8dc6-400e938f1f2b@def5.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreisfreundschaftsspiele – Kunstrasenplatz
-DTEND:20260816T163000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260816T150000Z
-SUMMARY:SG  Oftersheim 3 - SV Philippsburg 2
-UID:74db6f7a-425c-415c-893e-045d2fa2c73d@74db.org
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, Waldstadion Hockenheim
+DTEND:20260906T140000Z
+LOCATION:Waldstraße 3\, 68766 Hockenheim
+DTSTART:20260906T123000Z
+SUMMARY:FV 08 Hockenheim 2 - SG  Oftersheim 3
+UID:821dbf09-1157-4042-b322-5421a37d5fa7@821d.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20260920T163000Z
-LOCATION:Badenia Hirschacker\, Eiskellerweg 1\, 68723 Schwetzingen
-DTSTART:20260920T150000Z
-SUMMARY:KSC Schwetzingen - SG  Oftersheim 3
-UID:2e53b149-709d-4a6c-a071-f926c4f402bb@2e53.org
+DESCRIPTION:Kreisklasse B – Kunstrasenplatz\, SG Oftersheim KR
+DTEND:20261011T143000Z
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
+DTSTART:20261011T130000Z
+SUMMARY:SG  Oftersheim 3 - FV 1918 Brühl 2
+UID:50d50242-8471-419c-8414-44cc7b0e2cfb@50d5.org
 END:VEVENT
 BEGIN:VEVENT
-DESCRIPTION:Kreisfreundschaftsspiele – Kunstrasenplatz
+DESCRIPTION:Kreisfreundschaftsspiele – Kunstrasenplatz\, SG Oftersheim KR
 DTEND:20260823T133000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
+LOCATION:Hockenheimer Str. 1a\, 68723 Oftersheim
 DTSTART:20260823T120000Z
 SUMMARY:SG  Oftersheim 3 - SV Altlußheim 2
-UID:0d4d82b8-329b-487d-a869-f92cf001ee25@0d4d.org
-END:VEVENT
-BEGIN:VEVENT
-DESCRIPTION:Kreisklasse B – Kunstrasenplatz
-DTEND:20260913T143000Z
-LOCATION:SG Oftersheim KR\, Hockenheimer Str. 1a\, 68723 Oftersheim
-DTSTART:20260913T130000Z
-SUMMARY:SG  Oftersheim 3 - SV Altlußheim
-UID:3c3ac02c-e3fe-40d4-b6db-bd3494fef115@3c3a.org
+UID:7221eac7-7138-4d50-bbd2-941c12825223@7221.org
 END:VEVENT
 END:VCALENDAR
