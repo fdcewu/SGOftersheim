@@ -5,9 +5,75 @@ from datetime import datetime, timedelta, timezone
 import json
 import os
 import time
+from msal import ConfidentialClientApplication
 
 OUTPUT_DIR = "calendars"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# ---------------------------------------------------------
+#   MAIL-FUNKTION (Microsoft Graph API)
+# ---------------------------------------------------------
+
+def send_mail(subject, body):
+    try:
+        tenant_id = os.environ["SMTP_TENANT_ID"]
+        client_id = os.environ["SMTP_CLIENT_ID"]
+        client_secret = os.environ["SMTP_CLIENT_SECRET"]
+        sender = "automation@sg-oftersheim.de"
+
+        app = ConfidentialClientApplication(
+            client_id,
+            authority=f"https://login.microsoftonline.com/{tenant_id}",
+            client_credential=client_secret
+        )
+
+        result = app.acquire_token_for_client(
+            scopes=["https://graph.microsoft.com/.default"]
+        )
+
+        if "access_token" not in result:
+            print("⚠ Mail: Kein Token erhalten")
+            return False
+
+        access_token = result["access_token"]
+
+        mail = {
+            "message": {
+                "subject": subject,
+                "body": {
+                    "contentType": "Text",
+                    "content": body
+                },
+                "toRecipients": [
+                    {"emailAddress": {"address": "it@sg-oftersheim.de"}}
+                ]
+            }
+        }
+
+        response = requests.post(
+            f"https://graph.microsoft.com/v1.0/users/{sender}/sendMail",
+            headers={"Authorization": f"Bearer {access_token}"},
+            json=mail
+        )
+
+        print("Mail Status:", response.status_code)
+        return response.status_code == 202
+
+    except Exception as e:
+        print("⚠ Mail Fehler:", e)
+        return False
+
+
+# ---------------------------------------------------------
+#   MAIL-STEUERUNG
+# ---------------------------------------------------------
+
+send_success = os.getenv("SEND_EMAIL_ON_SUCCESS", "false").lower() == "true"
+send_error = os.getenv("SEND_EMAIL_ON_ERROR", "false").lower() == "true"
+
+# GitHub Pages Basis-URL für ICS-Dateien
+GITHUB_PAGES_BASE = "https://sgo-it.github.io/TeamCalendars/calendars/"
+
 
 # ---------------------------------------------------------
 # Geocoding: Adresse → GPS Koordinaten (OpenStreetMap)
@@ -31,6 +97,7 @@ def geocode(address):
         pass
 
     return None, None
+
 
 # ---------------------------------------------------------
 # Spielort extrahieren
@@ -66,6 +133,7 @@ def fetch_venue(match_url):
 
     return ""
 
+
 # ---------------------------------------------------------
 # Platzname + Adresse automatisch trennen
 # ---------------------------------------------------------
@@ -83,6 +151,7 @@ def split_venue(venue):
             return name, address
 
     return venue, ""
+
 
 # ---------------------------------------------------------
 # Spiele laden
@@ -120,7 +189,7 @@ def fetch_matches(team_url):
             else:
                 dt = datetime.strptime(raw, "%d.%m.%Y")
 
-            # **Zeitzone setzen → Deutschland (UTC+2)**
+            # Zeitzone setzen → Deutschland (UTC+2)
             dt = dt.replace(tzinfo=timezone(timedelta(hours=2)))
 
             current_date = dt
@@ -150,6 +219,7 @@ def fetch_matches(team_url):
             })
 
     return matches
+
 
 # ---------------------------------------------------------
 # ICS erzeugen
@@ -190,20 +260,46 @@ def build_calendar(matches):
         cal.events.add(e)
     return cal
 
+
 # ---------------------------------------------------------
 # Hauptprogramm
 # ---------------------------------------------------------
-with open("teams.json", "r") as f:
-    teams = json.load(f)
+try:
+    with open("teams.json", "r") as f:
+        teams = json.load(f)
 
-for team in teams:
-    matches = fetch_matches(team["url"])
-    print("Matches gefunden:", len(matches))
+    for team in teams:
+        matches = fetch_matches(team["url"])
+        print("Matches gefunden:", len(matches))
 
-    cal = build_calendar(matches)
+        cal = build_calendar(matches)
 
-    filename = f"{OUTPUT_DIR}/{team['name']}.ics"
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(cal.serialize())
+        filename = f"{OUTPUT_DIR}/{team['name']}.ics"
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(cal.serialize())
 
-    print(f"Erzeugt: {filename} (Events: {len(matches)})")
+        print(f"Erzeugt: {filename} (Events: {len(matches)})")
+
+        # Erfolgsmail pro Team
+        if send_success:
+            send_mail(
+                subject=f"Kalender aktualisiert: {team['name']}",
+                body=(
+                    f"Der Kalender für '{team['name']}' wurde erfolgreich erzeugt.\n"
+                    f"Anzahl Spiele: {len(matches)}\n"
+                    f"ICS-Datei: {GITHUB_PAGES_BASE}{team['name']}.ics\n"
+                )
+            )
+
+    print("✔ Alle Kalender erfolgreich erzeugt")
+
+except Exception as e:
+    print("⚠ Fehler beim Kalender-Update:", e)
+
+    if send_error:
+        send_mail(
+            subject="Fehler beim Kalender-Update",
+            body=f"Beim Erzeugen der Kalender ist ein Fehler aufgetreten:\n\n{e}"
+        )
+
+    raise
