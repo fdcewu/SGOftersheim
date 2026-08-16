@@ -9,11 +9,21 @@ jobs:
   update-calendar:
     runs-on: ubuntu-latest
 
+    env:
+      # Steuerung der Mail-Funktion
+      SEND_EMAIL_ON_SUCCESS: ${{ vars.SEND_EMAIL_ON_SUCCESS }}
+      SEND_EMAIL_ON_ERROR: ${{ vars.SEND_EMAIL_ON_ERROR }}
+
+      # Graph API Credentials
+      SMTP_CLIENT_ID: ${{ secrets.SMTP_CLIENT_ID }}
+      SMTP_CLIENT_SECRET: ${{ secrets.SMTP_CLIENT_SECRET }}
+      SMTP_TENANT_ID: ${{ secrets.SMTP_TENANT_ID }}
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false   # <<< WICHTIG, sonst blockiert GitHub den Push
+          persist-credentials: false   # wichtig für Push
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -22,7 +32,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 ics
+          pip install requests beautifulsoup4 ics msal
 
       - name: Run calendar generator
         id: runscript
@@ -36,45 +46,3 @@ jobs:
           git add .
           git commit -m "Update calendars" || echo "No changes to commit"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-
-      # ---------------------------------------------------------
-      # SUCCESS EMAIL (nur wenn ENABLE_EMAIL == true)
-      # ---------------------------------------------------------
-      - name: Send success email
-        if: success() && env.ENABLE_EMAIL == 'true'
-        uses: dawidd6/action-send-mail@v3
-        env:
-          ENABLE_EMAIL: ${{ secrets.ENABLE_EMAIL }}
-        with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASS }}
-          subject: "success: ${{ github.run_started_at }}"
-          to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow wurde erfolgreich ausgeführt.
-            Zeitpunkt: ${{ github.run_started_at }}
-
-      # ---------------------------------------------------------
-      # ERROR EMAIL (nur wenn ENABLE_EMAIL == true)
-      # ---------------------------------------------------------
-      - name: Send error email
-        if: failure() && env.ENABLE_EMAIL == 'true'
-        uses: dawidd6/action-send-mail@v3
-        env:
-          ENABLE_EMAIL: ${{ secrets.ENABLE_EMAIL }}
-        with:
-          server_address: smtp.office365.com
-          server_port: 587
-          username: ${{ secrets.MAIL_USER }}
-          password: ${{ secrets.MAIL_PASS }}
-          subject: "error: ${{ github.run_started_at }}"
-          to: "it@sg-oftersheim.de"
-          from: "SG Oftersheim IT <it@sg-oftersheim.de>"
-          body: |
-            Der Kalender-Workflow ist FEHLERHAFT beendet.
-            Zeitpunkt: ${{ github.run_started_at }}
-            Logs:
-            https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
