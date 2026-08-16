@@ -161,20 +161,22 @@ def build_calendar(matches):
         lat, lon = geocode(venue_address)
         time.sleep(1)  # Nominatim Rate Limit
 
-        # LOCATION = Koordinaten (Apple Maps kompatibel)
-        if lat and lon:
-            e.location = f"{lat},{lon}"
-        else:
-            e.location = venue_address  # Fallback
+        # LOCATION = nur Adresse (Apple Maps kompatibel)
+        e.location = venue_address
 
-        # DESCRIPTION = Liga + Platzname + Adresse + Google Maps Link
+        # DESCRIPTION = Liga + Platzname + Adresse + GPS + Links
         desc = m["league"]
+
         if venue_name:
             desc += f" – {venue_name}"
+
         if venue_address:
             desc += f"\nAdresse: {venue_address}"
+
         if lat and lon:
-            desc += f"\nKarte: https://maps.google.com/?q={lat},{lon}"
+            desc += f"\nGPS: {lat}, {lon}"
+            desc += f"\nGoogle Maps: https://maps.google.com/?q={lat},{lon}"
+            desc += f"\nApple Maps: https://maps.apple.com/?q={lat},{lon}"
 
         e.description = desc
 
