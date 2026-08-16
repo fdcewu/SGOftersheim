@@ -52,6 +52,32 @@ def fetch_venue(match_url):
 
 
 # ---------------------------------------------------------
+# SPIELORT SPLITTEN → Platzname + Adresse
+# ---------------------------------------------------------
+def split_venue(venue):
+    """
+    Trennt Platzname und Adresse.
+    Beispiel:
+    'Sportplatz Oftersheim, Jahnstraße 10, 68723 Oftersheim'
+    -> name='Sportplatz Oftersheim'
+       address='Jahnstraße 10, 68723 Oftersheim'
+    """
+    if not venue:
+        return "", ""
+
+    parts = [p.strip() for p in venue.split(",")]
+
+    # Wenn mindestens 3 Teile vorhanden sind → sauber trennbar
+    if len(parts) >= 3:
+        name = parts[0]
+        address = ", ".join(parts[1:])
+        return name, address
+
+    # Falls fussball.de nur einen Namen liefert
+    return venue, ""
+
+
+# ---------------------------------------------------------
 # SPIELE AUS MANNSCHAFTSSEITE LADEN
 # ---------------------------------------------------------
 def fetch_matches(team_url):
@@ -131,11 +157,17 @@ def build_calendar(matches):
         e.begin = m["start"]
         e.end = m["end"]
 
-        # WICHTIG: location darf NIE None sein
-        e.location = m["location"] or ""
+        # Platzname + Adresse trennen
+        venue_name, venue_address = split_venue(m["location"])
 
-        # Liga als Beschreibung
-        e.description = m["league"]
+        # Adresse → LOCATION (Apple Maps kompatibel)
+        e.location = venue_address or ""
+
+        # Beschreibung → Liga + Platzname
+        if venue_name:
+            e.description = f"{m['league']} – {venue_name}"
+        else:
+            e.description = m["league"]
 
         cal.events.add(e)
     return cal
