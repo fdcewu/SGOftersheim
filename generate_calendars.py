@@ -5,17 +5,13 @@ from datetime import datetime, timedelta
 import json
 import os
 
-# ---------------------------------------------------------
-# Unterverzeichnis für ICS-Dateien sicherstellen
-# ---------------------------------------------------------
 OUTPUT_DIR = "calendars"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # ---------------------------------------------------------
-# SPIELORT EXTRAKTION
+# Spielort extrahieren
 # ---------------------------------------------------------
 def fetch_venue(match_url):
-    """Extrahiert den Spielort von der Spielseite (robust)."""
     if not match_url:
         return ""
 
@@ -23,13 +19,11 @@ def fetch_venue(match_url):
         html = requests.get(match_url).text
         soup = BeautifulSoup(html, "html.parser")
 
-        # Hauptselektor – funktioniert bei aktuellen fussball.de-Spielseiten
         loc = soup.select_one("a.location")
         if loc:
             return loc.get_text(strip=True)
 
-        # Fallbacks für ältere oder mobile Seiten
-        fallback_selectors = [
+        fallback = [
             ".venue-name",
             ".match-location",
             ".location-name",
@@ -38,52 +32,46 @@ def fetch_venue(match_url):
             ".match-info-location"
         ]
 
-        for sel in fallback_selectors:
+        for sel in fallback:
             el = soup.select_one(sel)
             if el:
-                text = el.get_text(strip=True)
-                if text:
-                    return text
+                return el.get_text(strip=True)
 
     except Exception:
         pass
 
     return ""
 
-
 # ---------------------------------------------------------
-# SPIELORT SPLITTEN → Platzname + Adresse
+# Platzname + Adresse automatisch trennen
 # ---------------------------------------------------------
 def split_venue(venue):
     """
-    Trennt Platzname und Adresse.
+    Trennt Platzname und Adresse automatisch anhand der ersten Zahl.
     Beispiel:
-    'Sportplatz Oftersheim, Jahnstraße 10, 68723 Oftersheim'
-    -> name='Sportplatz Oftersheim'
-       address='Jahnstraße 10, 68723 Oftersheim'
+    'VfB Gartenstadt KR, Anemonenweg 20-40, 68305 Mannheim'
+    -> name='VfB Gartenstadt KR'
+       address='Anemonenweg 20-40, 68305 Mannheim'
     """
     if not venue:
         return "", ""
 
     parts = [p.strip() for p in venue.split(",")]
 
-    # Wenn mindestens 3 Teile vorhanden sind → sauber trennbar
-    if len(parts) >= 3:
-        name = parts[0]
-        address = ", ".join(parts[1:])
-        return name, address
+    # Finde den ersten Teil, der eine Zahl enthält → Adresse beginnt dort
+    for i, p in enumerate(parts):
+        if any(char.isdigit() for char in p):
+            name = ", ".join(parts[:i])
+            address = ", ".join(parts[i:])
+            return name, address
 
-    # Falls fussball.de nur einen Namen liefert
+    # Falls keine Zahl gefunden → alles ist Name
     return venue, ""
 
-
 # ---------------------------------------------------------
-# SPIELE AUS MANNSCHAFTSSEITE LADEN
+# Spiele laden
 # ---------------------------------------------------------
 def fetch_matches(team_url):
-    """Liest alle Spiele einer Mannschaft aus der fussball.de-Mannschaftsseite."""
-
-    # Hash-Fragment entfernen (#!/)
     if "#!" in team_url:
         team_url = team_url.split("#!")[0]
 
@@ -96,7 +84,6 @@ def fetch_matches(team_url):
 
     for row in soup.select("tr"):
 
-        # 1. row-headline → Datum + Uhrzeit + Wettbewerb
         if "row-headline" in row.get("class", []):
             headline = row.get_text(" ", strip=True)
             parts = headline.split("|")
@@ -106,11 +93,9 @@ def fetch_matches(team_url):
 
             raw = date_part.replace("Uhr", "").strip()
 
-            # Wochentag entfernen, falls vorhanden
             if "," in raw:
                 raw = raw.split(",", 1)[1].strip()
 
-            # Uhrzeit vorhanden?
             if "-" in raw:
                 dt = datetime.strptime(raw, "%d.%m.%Y - %H:%M")
             else:
@@ -120,7 +105,6 @@ def fetch_matches(team_url):
             current_competition = comp_part
             continue
 
-        # 2. echte Spielzeile → Teams
         if row.select_one(".column-club"):
             clubs = row.select(".column-club .club-name")
             if len(clubs) < 2:
@@ -129,7 +113,6 @@ def fetch_matches(team_url):
             home = clubs[0].get_text(strip=True)
             away = clubs[1].get_text(strip=True)
 
-            # Link zur Spielseite → für Spielort
             score_link = row.select_one(".column-score a")
             match_url = score_link["href"] if score_link else ""
 
@@ -145,9 +128,8 @@ def fetch_matches(team_url):
 
     return matches
 
-
 # ---------------------------------------------------------
-# ICS ERZEUGEN
+# ICS erzeugen
 # ---------------------------------------------------------
 def build_calendar(matches):
     cal = Calendar()
@@ -157,24 +139,22 @@ def build_calendar(matches):
         e.begin = m["start"]
         e.end = m["end"]
 
-        # Platzname + Adresse trennen
         venue_name, venue_address = split_venue(m["location"])
 
-        # Adresse → LOCATION (Apple Maps kompatibel)
-        e.location = venue_address or ""
+        # LOCATION = nur Adresse (Apple Maps kompatibel)
+        e.location = venue_address
 
-        # Beschreibung → Liga + Platzname
+        # DESCRIPTION = Liga + Platzname
+        desc = m["league"]
         if venue_name:
-            e.description = f"{m['league']} – {venue_name}"
-        else:
-            e.description = m["league"]
+            desc += f" – {venue_name}"
+        e.description = desc
 
         cal.events.add(e)
     return cal
 
-
 # ---------------------------------------------------------
-# HAUPTPROGRAMM
+# Hauptprogramm
 # ---------------------------------------------------------
 with open("teams.json", "r") as f:
     teams = json.load(f)
