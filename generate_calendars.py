@@ -4,9 +4,33 @@ from ics import Calendar, Event
 from datetime import datetime, timedelta
 import json
 import os
+import time
 
 OUTPUT_DIR = "calendars"
 os.makedirs(OUTPUT_DIR, exist_ok=True)
+
+# ---------------------------------------------------------
+# Geocoding: Adresse → GPS Koordinaten (OpenStreetMap)
+# ---------------------------------------------------------
+def geocode(address):
+    if not address:
+        return None, None
+
+    url = "https://nominatim.openstreetmap.org/search"
+    params = {
+        "q": address,
+        "format": "json",
+        "limit": 1
+    }
+
+    try:
+        r = requests.get(url, params=params, headers={"User-Agent": "SGO-CalendarBot"}).json()
+        if r:
+            return r[0]["lat"], r[0]["lon"]
+    except Exception:
+        pass
+
+    return None, None
 
 # ---------------------------------------------------------
 # Spielort extrahieren
@@ -46,26 +70,18 @@ def fetch_venue(match_url):
 # Platzname + Adresse automatisch trennen
 # ---------------------------------------------------------
 def split_venue(venue):
-    """
-    Trennt Platzname und Adresse automatisch anhand der ersten Zahl.
-    Beispiel:
-    'VfB Gartenstadt KR, Anemonenweg 20-40, 68305 Mannheim'
-    -> name='VfB Gartenstadt KR'
-       address='Anemonenweg 20-40, 68305 Mannheim'
-    """
     if not venue:
         return "", ""
 
     parts = [p.strip() for p in venue.split(",")]
 
-    # Finde den ersten Teil, der eine Zahl enthält → Adresse beginnt dort
+    # Adresse beginnt dort, wo eine Zahl vorkommt
     for i, p in enumerate(parts):
         if any(char.isdigit() for char in p):
             name = ", ".join(parts[:i])
             address = ", ".join(parts[i:])
             return name, address
 
-    # Falls keine Zahl gefunden → alles ist Name
     return venue, ""
 
 # ---------------------------------------------------------
@@ -141,13 +157,25 @@ def build_calendar(matches):
 
         venue_name, venue_address = split_venue(m["location"])
 
-        # LOCATION = nur Adresse (Apple Maps kompatibel)
-        e.location = venue_address
+        # GPS Koordinaten holen
+        lat, lon = geocode(venue_address)
+        time.sleep(1)  # Nominatim Rate Limit
 
-        # DESCRIPTION = Liga + Platzname
+        # LOCATION = Koordinaten (Apple Maps kompatibel)
+        if lat and lon:
+            e.location = f"{lat},{lon}"
+        else:
+            e.location = venue_address  # Fallback
+
+        # DESCRIPTION = Liga + Platzname + Adresse + Google Maps Link
         desc = m["league"]
         if venue_name:
             desc += f" – {venue_name}"
+        if venue_address:
+            desc += f"\nAdresse: {venue_address}"
+        if lat and lon:
+            desc += f"\nKarte: https://maps.google.com/?q={lat},{lon}"
+
         e.description = desc
 
         cal.events.add(e)
